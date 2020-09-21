@@ -1,0 +1,8 @@
+<div *ngIf="globalData$ | async as _data">
+  <app-data-card
+    *ngFor="let item of cards"
+    [title]="item.name"
+    [total]="_data.Global[item.total]"
+    [new]="_data.Global[item.new]"
+  ></app-data-card>
+</div>

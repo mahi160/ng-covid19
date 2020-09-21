@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
+import { WorldComponent } from './views/world/world.component';
 
 const routes: Routes = [
+  {
+    path: 'world',
+    component: WorldComponent,
+  },
   {
     path: '**',
     component: PageNotFoundComponent,
