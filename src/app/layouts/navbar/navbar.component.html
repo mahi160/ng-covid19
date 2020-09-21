@@ -1,0 +1,12 @@
+<nav>
+  <div class="logo">Covid 19</div>
+  <div class="navigation">
+    <ul class="nav-list">
+      <li class="nav-item" *ngFor="let item of navList">
+        <a [routerLink]="[item.path]" routerLinkActive="active">
+          {{ item.name }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

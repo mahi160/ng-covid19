@@ -1,0 +1,22 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 2rem;
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    li {
+      padding: 0.25rem;
+      a {
+        text-decoration: none;
+        color: green;
+      }
+      .active {
+        color: red;
+      }
+    }
+  }
+}
