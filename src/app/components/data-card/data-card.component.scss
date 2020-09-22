@@ -1,6 +1,8 @@
 .card {
+  display: inline-block;
   border: 1px solid red;
-  margin: 10px;
-  width: fit-content;
+  border-radius: 0.5rem;
   padding: 20px;
+  width: 12.5em;
+  height: 12.5em;
 }

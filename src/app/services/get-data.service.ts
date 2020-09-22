@@ -9,5 +9,8 @@ export class GetDataService {
   getSummary(): Observable<Global> {
     return this.http.get<Global>(`${API_SUMMARY_URL}`);
   }
+  getCountry(countryCode: string): Observable<any> {
+    return this.http.get<any>(`${API_SUMMARY_URL}`);
+  }
   constructor(private http: HttpClient) {}
 }

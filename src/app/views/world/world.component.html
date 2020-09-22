@@ -1,4 +1,5 @@
-<div *ngIf="globalData$ | async as _data">
+<h1>The World</h1>
+<div *ngIf="globalData$ | async as _data" class="world">
   <app-data-card
     *ngFor="let item of cards"
     [title]="item.name"
@@ -6,3 +7,4 @@
     [new]="_data.Global[item.new]"
   ></app-data-card>
 </div>
+<div *ngIf="!(globalData$ | async)" class="loader">Loading</div>
