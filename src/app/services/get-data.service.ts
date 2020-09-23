@@ -6,11 +6,15 @@ import { Global } from '../models/global.model';
 const API_SUMMARY_URL = 'https://api.covid19api.com/summary';
 @Injectable({ providedIn: 'root' })
 export class GetDataService {
-  getSummary(): Observable<Global> {
+  loadSummary(): Observable<Global> {
     return this.http.get<Global>(`${API_SUMMARY_URL}`);
   }
-  getCountry(countryCode: string): Observable<any> {
-    return this.http.get<any>(`${API_SUMMARY_URL}`);
+  getGlobal() {
+    return JSON.parse(localStorage.getItem('Data'));
+  }
+  returnGlobal(): Observable<any> {
+    const data = this.getGlobal();
+    return data.Global;
   }
   constructor(private http: HttpClient) {}
 }
