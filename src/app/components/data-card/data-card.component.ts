@@ -8,22 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DataCardComponent implements OnInit {
   @Input() data: Global;
-  // @Input() title: string;
-  // @Input() total: number;
-  // @Input() new: number;
-  // @Input() style: object;
+  @Input() pageTitle: string;
 
   cards = [
-    {
-      name: 'Confirmed',
-      new: 'NewConfirmed',
-      total: 'TotalConfirmed',
-      // image: '../../../assets/images/bear.jpg',
-      image:
-        'repeating-linear-gradient(130deg, rgb(223, 142, 17) 0px, rgb(223, 142, 17) 41px,rgb(221, 125, 11) 41px, rgb(221, 125, 11) 102px,rgb(225, 158, 23) 102px, rgb(225, 158, 23) 187px,rgb(227, 175, 29) 187px, rgb(227, 175, 29) 197px,rgb(229, 191, 35) 197px, rgb(229, 191, 35) 211px)',
-      newD: 0,
-      totalD: 0,
-    },
     {
       name: 'Recovered',
       new: 'NewRecovered',
@@ -31,6 +18,16 @@ export class DataCardComponent implements OnInit {
       // image: '../../../assets/images/horse.jpg',
       image:
         'repeating-linear-gradient(135deg, rgb(18, 182, 56) 0px, rgb(18, 182, 56) 16px,rgb(13, 209, 68) 16px, rgb(13, 209, 68) 108px,rgb(23, 154, 43) 108px, rgb(23, 154, 43) 246px)',
+      newD: 0,
+      totalD: 0,
+    },
+    {
+      name: 'Confirmed',
+      new: 'NewConfirmed',
+      total: 'TotalConfirmed',
+      // image: '../../../assets/images/bear.jpg',
+      image:
+        'repeating-linear-gradient(130deg, rgb(223, 142, 17) 0px, rgb(223, 142, 17) 41px,rgb(221, 125, 11) 41px, rgb(221, 125, 11) 102px,rgb(225, 158, 23) 102px, rgb(225, 158, 23) 187px,rgb(227, 175, 29) 187px, rgb(227, 175, 29) 197px,rgb(229, 191, 35) 197px, rgb(229, 191, 35) 211px)',
       newD: 0,
       totalD: 0,
     },
@@ -49,10 +46,10 @@ export class DataCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.cards[0].newD = this.data.NewConfirmed;
-    this.cards[0].totalD = this.data.TotalConfirmed;
-    this.cards[1].newD = this.data.NewRecovered;
-    this.cards[1].totalD = this.data.TotalRecovered;
+    this.cards[0].newD = this.data.NewRecovered;
+    this.cards[0].totalD = this.data.TotalRecovered;
+    this.cards[1].newD = this.data.NewConfirmed;
+    this.cards[1].totalD = this.data.TotalConfirmed;
     this.cards[2].newD = this.data.NewDeaths;
     this.cards[2].totalD = this.data.TotalDeaths;
   }

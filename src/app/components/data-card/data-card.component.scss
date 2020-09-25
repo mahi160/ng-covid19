@@ -1,18 +1,18 @@
 .data-card {
   display: grid;
-  gap: 10px;
+  // gap: 10px;
   align-items: center;
   justify-items: center;
-  // grid-template-rows: 1fr;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 1260px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   .card {
     display: inline-block;
-    border-radius: 0.5rem;
+    border-radius: 0.6rem;
     cursor: pointer;
-    padding: 20px;
-    width: 12.5em;
-    height: 12.5em;
-    margin-top: 1rem;
+    padding: 1rem;
+    width: 17.5em;
+    height: 17.5em;
+    margin: 1em;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
     &:hover {
@@ -20,5 +20,28 @@
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
         0 10px 10px rgba(0, 0, 0, 0.22);
     }
+    color: #f1f2f6;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    .value {
+      font-size: 2.4em;
+      line-height: 50px;
+    }
+  }
+}
+h1 {
+  font-size: 4em;
+  text-align: center;
+  color: #f1f2f6;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+h2 {
+  font-size: 2.8em;
+}
+h3 {
+  font-size: 1.55em;
+  text-decoration: underline;
+  &:last-child {
+    margin-top: 0.4em;
   }
 }
