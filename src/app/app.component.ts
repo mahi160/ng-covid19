@@ -1,7 +1,5 @@
-import { Store } from '@ngrx/store';
+import { GetDataService } from 'src/app/services/get-data.service';
 import { Component } from '@angular/core';
-import { DataState } from './ngrx/get-data.reducers';
-import { LoadData } from './ngrx/get-data.actions';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +7,10 @@ import { LoadData } from './ngrx/get-data.actions';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(private store: Store<DataState>) {
-    this.store.dispatch(new LoadData());
+  constructor(private dataService: GetDataService) {
+    this.dataService.loadSummary().subscribe((res) => {
+      console.info(res.Message || 'Data Saved to Session Storage.');
+      return sessionStorage.setItem('Data', JSON.stringify(res));
+    });
   }
 }

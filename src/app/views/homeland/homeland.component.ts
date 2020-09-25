@@ -1,5 +1,7 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { GetDataService } from 'src/app/services/get-data.service';
+import { Country } from 'src/app/models/country.model';
 
 @Component({
   selector: 'app-homeland',
@@ -7,9 +9,9 @@ import { GetDataService } from 'src/app/services/get-data.service';
   styleUrls: ['./homeland.component.scss'],
 })
 export class HomelandComponent implements OnInit {
-  // globalData$: Observable<Global>;
   homeland = 'Bangladesh';
-  home: object;
+  homeCC = 'BD';
+  home$: Observable<Country>;
   cards = [
     { name: 'Confirmed', new: 'NewConfirmed', total: 'TotalConfirmed' },
     { name: 'Recovered', new: 'NewRecovered', total: 'TotalRecovered' },
@@ -18,18 +20,6 @@ export class HomelandComponent implements OnInit {
   constructor(private data: GetDataService) {}
 
   ngOnInit(): void {
-    this.data.getCountry(this.homeland).subscribe((res) => {
-      res = res.Countries;
-      let i = 0;
-      const data = () => {
-        if (res[i].Country === this.homeland) {
-          this.home = res[i];
-        } else {
-          i++;
-          data();
-        }
-      };
-      data();
-    });
+    this.home$ = this.data.getCountry(this.homeCC);
   }
 }

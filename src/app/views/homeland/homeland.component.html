@@ -1,10 +1,10 @@
 <h1>{{ homeland }}</h1>
-<div *ngIf="home" class="home">
+<div *ngIf="home$ | async as _home" class="home">
   <app-data-card
     *ngFor="let item of cards"
     [title]="item.name"
-    [total]="home[item.total]"
-    [new]="home[item.new]"
+    [total]="_home[item.total]"
+    [new]="_home[item.new]"
   ></app-data-card>
 </div>
-<div *ngIf="!home" class="loader">Loading</div>
+<div *ngIf="!(home$ | async)" class="loader">Loading</div>

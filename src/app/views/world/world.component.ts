@@ -18,6 +18,6 @@ export class WorldComponent implements OnInit {
   constructor(private data: GetDataService) {}
 
   ngOnInit(): void {
-    this.globalData$ = this.data.getSummary();
+    this.globalData$ = this.data.getGlobal();
   }
 }

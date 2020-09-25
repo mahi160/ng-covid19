@@ -3,8 +3,8 @@
   <app-data-card
     *ngFor="let item of cards"
     [title]="item.name"
-    [total]="_data.Global[item.total]"
-    [new]="_data.Global[item.new]"
+    [total]="_data[item.total]"
+    [new]="_data[item.new]"
   ></app-data-card>
 </div>
 <div *ngIf="!(globalData$ | async)" class="loader">Loading</div>
