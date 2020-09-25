@@ -12,11 +12,7 @@ export class HomelandComponent implements OnInit {
   homeland = 'Bangladesh';
   homeCC = 'BD';
   home$: Observable<Country>;
-  cards = [
-    { name: 'Confirmed', new: 'NewConfirmed', total: 'TotalConfirmed' },
-    { name: 'Recovered', new: 'NewRecovered', total: 'TotalRecovered' },
-    { name: 'Deaths', new: 'NewDeaths', total: 'TotalDeaths' },
-  ];
+
   constructor(private data: GetDataService) {}
 
   ngOnInit(): void {

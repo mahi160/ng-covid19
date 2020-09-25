@@ -1,10 +1,16 @@
-<div class="card">
-  <h2>{{ title }}</h2>
-  <div class="content">
-    <h3>Total</h3>
-    <div class="value">{{ total }}</div>
-    <h3>Today</h3>
-    <div class="value">{{ new }}</div>
+<div class="data-card">
+  <div
+    class="card"
+    *ngFor="let item of cards; let i = index"
+    [ngStyle]="Style(i)"
+  >
+    <h2>{{ item.name }}</h2>
+    <div class="content">
+      <h3>Total</h3>
+      <div class="value">{{ item.totalD }}</div>
+      <h3>Today</h3>
+      <div class="value">{{ item.newD }}</div>
+    </div>
+    <div class="footer"></div>
   </div>
-  <div class="footer"></div>
 </div>
