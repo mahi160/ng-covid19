@@ -1,4 +1,14 @@
-<h1>{{ pageTitle }}</h1>
+<h1>
+  {{ pageTitle }}
+  <span
+    *ngIf="ago$ | async as ago"
+    [hidden]="!data.noData"
+    style="font-size: 12px"
+  >
+    {{ ago | timeAgo }}
+  </span>
+</h1>
+
 <div class="data-card" *ngIf="!data.noData">
   <div
     class="card"
