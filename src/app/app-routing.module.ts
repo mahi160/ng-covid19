@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 import { WorldComponent } from './views/world/world.component';
+import { CountriesComponent } from './views/countries/countries.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'homeland',
     component: HomelandComponent,
+  },
+  {
+    path: 'countries',
+    component: CountriesComponent,
   },
   {
     path: '**',

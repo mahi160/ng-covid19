@@ -11,6 +11,8 @@ import { HomelandComponent } from './views/homeland/homeland.component';
 import { WorldComponent } from './views/world/world.component';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
 import { TimeAgoPipe } from './pipes/time-ago.pipe';
+import { SearchComponent } from './components/search/search.component';
+import { CountriesComponent } from './views/countries/countries.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +22,8 @@ import { TimeAgoPipe } from './pipes/time-ago.pipe';
     WorldComponent,
     HomelandComponent,
     TimeAgoPipe,
+    SearchComponent,
+    CountriesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [GetDataService],

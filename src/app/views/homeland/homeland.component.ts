@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GetDataService } from 'src/app/services/get-data.service';
 import { Country } from 'src/app/models/country.model';
 
@@ -9,8 +9,7 @@ import { Country } from 'src/app/models/country.model';
   styleUrls: ['./homeland.component.scss'],
 })
 export class HomelandComponent implements OnInit {
-  homeland = 'Bangladesh';
-  homeCC = 'BD';
+  @Input() homeCC = 'BD';
   home$: Observable<Country>;
 
   constructor(private data: GetDataService) {}

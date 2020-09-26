@@ -1,0 +1,19 @@
+<div>
+  <form>
+    <label for="serach"></label>
+    <input
+      type="text"
+      name="search"
+      class="search"
+      placeholder="Search for a country"
+      (keyup)="getSearched($event)"
+    />
+  </form>
+  <ul>
+    <li *ngFor="let item of searchString">
+      <span>{{ item }}</span>
+    </li>
+  </ul>
+</div>
+
+<!--[hidden]="showSearched(item)"-->

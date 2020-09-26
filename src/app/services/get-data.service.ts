@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Global } from '../models/global.model';
 import { Country } from '../models/country.model';
+import { CountryList } from '../models/country-list.model';
 
 const API_SUMMARY_URL = 'https://api.covid19api.com/summary';
 
@@ -54,9 +55,32 @@ export class GetDataService {
   getDate(): Observable<string> {
     let data = JSON.parse(sessionStorage.getItem('Data'));
     data = data.Date;
-    console.log(data);
-
     return of(data);
+  }
+  getCountryList(): CountryList[] {
+    const data = JSON.parse(sessionStorage.getItem('Data')).Countries;
+    let y = [
+      { name: 'BangladesH', slug: 'BD' },
+      { name: 'Banglades', slug: 'BD' },
+      { name: 'Banglades', slug: 'BD' },
+      { name: 'Banglades', slug: 'BD' },
+      { name: 'Banglades', slug: 'BD' },
+      { name: 'Banglades', slug: 'BD' },
+      { name: 'Banglades', slug: 'BD' },
+      { name: 'Banglades', slug: 'BD' },
+      { name: 'Banglades', slug: 'BD' },
+      { name: 'Banglades', slug: 'BD' },
+      { name: 'Banglades', slug: 'BD' },
+      { name: 'Banglades', slug: 'BD' },
+      { name: 'Banglades', slug: 'BD' },
+      { name: 'Banglades', slug: 'BD' },
+    ];
+    if (data) {
+      data.forEach((e) => {
+        y.push({ name: e.Country, slug: e.Slug });
+      });
+    }
+    return y;
   }
 
   constructor(private http: HttpClient) {}
