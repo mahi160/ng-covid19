@@ -52,6 +52,7 @@ export class DataCardComponent implements OnInit {
     this.cards[1].totalD = this.data.TotalConfirmed;
     this.cards[2].newD = this.data.NewDeaths;
     this.cards[2].totalD = this.data.TotalDeaths;
+    console.log(this.cards);
   }
   Style(i): object {
     return {
