@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+import { GetDataService } from 'src/app/services/get-data.service';
 import { Country } from 'src/app/models/country.model';
 import { Global } from './../../models/global.model';
 import { Component, Input, OnInit } from '@angular/core';
@@ -44,8 +46,9 @@ export class DataCardComponent implements OnInit {
       totalD: 0,
     },
   ];
+  ago$: Observable<string>;
 
-  constructor() {}
+  constructor(private dataService: GetDataService) {}
 
   ngOnInit(): void {
     this.cards[0].newD = this.data.NewRecovered;
@@ -54,7 +57,7 @@ export class DataCardComponent implements OnInit {
     this.cards[1].totalD = this.data.TotalConfirmed;
     this.cards[2].newD = this.data.NewDeaths;
     this.cards[2].totalD = this.data.TotalDeaths;
-    console.log(this.cards);
+    this.ago$ = this.dataService.getDate();
   }
   Style(i): object {
     return {

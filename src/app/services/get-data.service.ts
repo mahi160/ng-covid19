@@ -51,6 +51,13 @@ export class GetDataService {
     }
     return of(res);
   }
+  getDate(): Observable<string> {
+    let data = JSON.parse(sessionStorage.getItem('Data'));
+    data = data.Date;
+    console.log(data);
+
+    return of(data);
+  }
 
   constructor(private http: HttpClient) {}
 }

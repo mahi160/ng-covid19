@@ -2,8 +2,8 @@
   {{ pageTitle }}
   <span
     *ngIf="ago$ | async as ago"
-    [hidden]="!data.noData"
-    style="font-size: 12px"
+    [hidden]="data.noData"
+    style="font-size: 12px; color: #c4c4c4c4"
   >
     {{ ago | timeAgo }}
   </span>
