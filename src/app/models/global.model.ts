@@ -1,4 +1,5 @@
 export interface Global {
+  noData?: boolean;
   NewConfirmed: number;
   NewDeaths: number;
   NewRecovered: number;

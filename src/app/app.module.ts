@@ -10,6 +10,7 @@ import { DataCardComponent } from './components/data-card/data-card.component';
 import { HomelandComponent } from './views/homeland/homeland.component';
 import { WorldComponent } from './views/world/world.component';
 import { PageNotFoundComponent } from './views/page-not-found/page-not-found.component';
+import { TimeAgoPipe } from './pipes/time-ago.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { PageNotFoundComponent } from './views/page-not-found/page-not-found.com
     DataCardComponent,
     WorldComponent,
     HomelandComponent,
+    TimeAgoPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [GetDataService],

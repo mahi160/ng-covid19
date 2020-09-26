@@ -1,3 +1,4 @@
+import { Country } from 'src/app/models/country.model';
 import { Global } from './../../models/global.model';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -7,8 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./data-card.component.scss'],
 })
 export class DataCardComponent implements OnInit {
-  @Input() data: Global;
+  @Input() data: Country;
   @Input() pageTitle: string;
+  errorMsg = 'Caching is in progress. Please try again later.';
 
   cards = [
     {

@@ -13,13 +13,42 @@ export class GetDataService {
   }
   getGlobal(): Observable<Global> {
     let data = JSON.parse(sessionStorage.getItem('Data'));
-    data = data.Global;
+
+    if (data.Countries) {
+      data = data.Global;
+    } else {
+      data = {
+        noData: true,
+        NewConfirmed: 0,
+        NewDeaths: 0,
+        NewRecovered: 0,
+        TotalConfirmed: 0,
+        TotalDeaths: 0,
+        TotalRecovered: 0,
+      };
+    }
     return of(data);
   }
   getCountry(cc: string): Observable<Country> {
     let data = JSON.parse(sessionStorage.getItem('Data'));
-    data = data.Countries;
-    const res = data.find((e) => e.CountryCode === cc);
+    let res: Country;
+    if (data.Countries) {
+      data = data.Countries;
+      res = data.find((e) => e.CountryCode === cc);
+    } else {
+      res = {
+        noData: true,
+        Country: '',
+        CountryCode: '',
+        Slug: '',
+        NewConfirmed: 0,
+        TotalConfirmed: 0,
+        NewDeaths: 0,
+        TotalDeaths: 0,
+        NewRecovered: 0,
+        TotalRecovered: 0,
+      };
+    }
     return of(res);
   }
 

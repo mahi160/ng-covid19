@@ -1,7 +1,8 @@
 export interface Country {
-  Country: string;
-  CountryCode: string;
-  Slug: string;
+  noData?: boolean;
+  Country?: string;
+  CountryCode?: string;
+  Slug?: string;
   NewConfirmed: number;
   TotalConfirmed: number;
   NewDeaths: number;

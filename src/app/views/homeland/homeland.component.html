@@ -1,4 +1,7 @@
 <div *ngIf="home$ | async as _home" class="home">
-  <app-data-card [data]="_home" [pageTitle]="homeland"></app-data-card>
+  <app-data-card
+    [data]="_home"
+    [pageTitle]="_home.Country || 'Homeland'"
+  ></app-data-card>
 </div>
 <div *ngIf="!(home$ | async)" class="loader">Loading</div>
