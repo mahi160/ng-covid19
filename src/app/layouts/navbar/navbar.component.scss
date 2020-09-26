@@ -3,19 +3,34 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 2rem;
+  max-width: 1260px;
+  margin: auto;
+
+  .logo {
+    font-size: 3em;
+    padding: 0px 15px;
+    font-family: cursive;
+    color: #c4c4c4c4;
+  }
+  .navigation {
+    align-self: end;
+  }
   ul {
     list-style: none;
     display: flex;
     flex-direction: row;
     li {
-      padding: 0.25rem;
+      padding: 12px;
+      justify-self: end;
       a {
+        font-size: 1.2em;
         text-decoration: none;
-        color: green;
+        color: #f1f2f6;
+        font-weight: 300;
       }
       .active {
-        color: red;
+        color: #f12345;
+        text-decoration: underline;
       }
     }
   }
