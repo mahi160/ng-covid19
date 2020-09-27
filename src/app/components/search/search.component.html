@@ -1,19 +1,23 @@
-<div>
+<div class="search">
   <form>
-    <label for="serach"></label>
     <input
       type="text"
       name="search"
-      class="search"
+      class="autocomplete-input"
       placeholder="Search for a country"
       (keyup)="getSearched($event)"
     />
   </form>
-  <ul>
-    <li *ngFor="let item of searchString">
-      <span>{{ item }}</span>
-    </li>
-  </ul>
+  <div class="autocomplete">
+    <ul
+      class="autocomplete-result-list"
+      [hidden]="!searchString || !searchString.length"
+    >
+      <li *ngFor="let item of searchString" class="autocomplete-result">
+        <span>{{ item }}</span>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <!--[hidden]="showSearched(item)"-->

@@ -35,7 +35,7 @@ export class GetDataService {
     let res: Country;
     if (data.Countries) {
       data = data.Countries;
-      res = data.find((e) => e.CountryCode === cc);
+      res = data.find((e) => e.CountryCode.toLowerCase() === cc.toLowerCase());
     } else {
       res = {
         noData: true,
@@ -59,22 +59,7 @@ export class GetDataService {
   }
   getCountryList(): CountryList[] {
     const data = JSON.parse(sessionStorage.getItem('Data')).Countries;
-    let y = [
-      { name: 'BangladesH', slug: 'BD' },
-      { name: 'Banglades', slug: 'BD' },
-      { name: 'Banglades', slug: 'BD' },
-      { name: 'Banglades', slug: 'BD' },
-      { name: 'Banglades', slug: 'BD' },
-      { name: 'Banglades', slug: 'BD' },
-      { name: 'Banglades', slug: 'BD' },
-      { name: 'Banglades', slug: 'BD' },
-      { name: 'Banglades', slug: 'BD' },
-      { name: 'Banglades', slug: 'BD' },
-      { name: 'Banglades', slug: 'BD' },
-      { name: 'Banglades', slug: 'BD' },
-      { name: 'Banglades', slug: 'BD' },
-      { name: 'Banglades', slug: 'BD' },
-    ];
+    const y = [];
     if (data) {
       data.forEach((e) => {
         y.push({ name: e.Country, slug: e.Slug });

@@ -10,6 +10,6 @@ export class CountriesComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.countryCode = 'in';
+    this.countryCode = 'In';
   }
 }
