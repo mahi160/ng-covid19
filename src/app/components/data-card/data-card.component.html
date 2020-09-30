@@ -15,12 +15,12 @@
     *ngFor="let item of cards; let i = index"
     [ngStyle]="Style(i)"
   >
-    <h2>{{ item.name }}</h2>
+    <h2>{{ item.name | titlecase }}</h2>
     <div class="content">
       <h3>Total</h3>
-      <div class="value">{{ item.totalD }}</div>
+      <div class="value">{{ item.totalD | number }}</div>
       <h3>Today</h3>
-      <div class="value">{{ item.newD }}</div>
+      <div class="value">{{ item.newD | number }}</div>
     </div>
     <div class="footer"></div>
   </div>
