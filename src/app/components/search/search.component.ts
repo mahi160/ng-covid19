@@ -1,5 +1,5 @@
 import { GetDataService } from 'src/app/services/get-data.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CountryList } from 'src/app/models/country-list.model';
 
 @Component({
@@ -8,9 +8,10 @@ import { CountryList } from 'src/app/models/country-list.model';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-  // countries = [{ name: 'Bangladesh' }, { name: 'India' }, { name: 'Pakistan' }];
+  @Output() selected: EventEmitter<string> = new EventEmitter<string>();
   countries: CountryList[];
   searchString: string[];
+  name: string;
   constructor(private dataService: GetDataService) {}
 
   ngOnInit(): void {
@@ -28,6 +29,13 @@ export class SearchComponent implements OnInit {
     } else {
       this.searchString = [];
     }
-    console.log(`%c ${this.searchString}`, 'color: orange');
+  }
+  countrySelected(item: string): void {
+    let x = this.countries.filter((e) => {
+      return e.name === item;
+    });
+    this.name = x[0].name;
+    this.selected.emit(x[0].cc);
+    this.searchString = [];
   }
 }

@@ -1,2 +1,8 @@
-<app-search></app-search>
-<app-homeland [homeCC]="countryCode"></app-homeland>
+<app-search (selected)="selected($event)"></app-search>
+
+<app-data-card
+  *ngIf="country$ | async as _country"
+  class="country"
+  [data]="_country"
+  [pageTitle]="_country.Country"
+></app-data-card>

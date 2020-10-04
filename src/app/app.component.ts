@@ -12,5 +12,12 @@ export class AppComponent {
       console.info(res.Message || 'Data Saved to Session Storage.');
       return sessionStorage.setItem('Data', JSON.stringify(res));
     });
+    const time = 1000 * 60 * 30;
+    setInterval(() => {
+      this.dataService.loadSummary().subscribe((res) => {
+        console.info(res.Message || 'Data Saved to Session Storage.');
+        return sessionStorage.setItem('Data', JSON.stringify(res));
+      });
+    }, time);
   }
 }

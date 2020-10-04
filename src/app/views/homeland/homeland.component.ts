@@ -9,7 +9,7 @@ import { Country } from 'src/app/models/country.model';
   styleUrls: ['./homeland.component.scss'],
 })
 export class HomelandComponent implements OnInit {
-  @Input() homeCC = 'BD';
+  homeCC = 'BD';
   home$: Observable<Country>;
 
   constructor(private data: GetDataService) {}

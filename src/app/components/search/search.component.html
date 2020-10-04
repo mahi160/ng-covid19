@@ -6,6 +6,7 @@
       class="autocomplete-input"
       placeholder="Search for a country"
       (keyup)="getSearched($event)"
+      [value]="name || ''"
     />
   </form>
   <div class="autocomplete">
@@ -13,8 +14,12 @@
       class="autocomplete-result-list"
       [hidden]="!searchString || !searchString.length"
     >
-      <li *ngFor="let item of searchString" class="autocomplete-result">
-        <span>{{ item }}</span>
+      <li
+        *ngFor="let item of searchString"
+        class="autocomplete-result"
+        (click)="countrySelected(item)"
+      >
+        <span>{{ item | titlecase }}</span>
       </li>
     </ul>
   </div>

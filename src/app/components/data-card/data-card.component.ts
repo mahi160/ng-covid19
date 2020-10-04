@@ -51,13 +51,15 @@ export class DataCardComponent implements OnInit {
   constructor(private dataService: GetDataService) {}
 
   ngOnInit(): void {
+    this.ago$ = this.dataService.getDate();
+  }
+  ngOnChanges(): void {
     this.cards[0].newD = this.data.NewRecovered;
     this.cards[0].totalD = this.data.TotalRecovered;
     this.cards[1].newD = this.data.NewConfirmed;
     this.cards[1].totalD = this.data.TotalConfirmed;
     this.cards[2].newD = this.data.NewDeaths;
     this.cards[2].totalD = this.data.TotalDeaths;
-    this.ago$ = this.dataService.getDate();
   }
   Style(i): object {
     return {

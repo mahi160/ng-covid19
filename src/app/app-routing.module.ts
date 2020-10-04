@@ -15,6 +15,10 @@ const routes: Routes = [
     component: HomelandComponent,
   },
   {
+    path: ' ',
+    redirectTo: '/homeland',
+  },
+  {
     path: 'countries',
     component: CountriesComponent,
   },

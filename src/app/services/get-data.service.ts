@@ -62,7 +62,7 @@ export class GetDataService {
     const y = [];
     if (data) {
       data.forEach((e) => {
-        y.push({ name: e.Country, slug: e.Slug });
+        y.push({ name: e.Country, cc: e.CountryCode });
       });
     }
     return y;

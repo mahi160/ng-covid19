@@ -1,21 +1,10 @@
 .search {
   width: 300px;
   margin: auto;
-  // ul {
-  //   list-style-type: none;
-  //   width: 229px;
-  //   background: #fff;
-  //   position: absolute;
-  //   left: calc(50% - 115px);
-  //   max-height: 300px;
-  //   overflow: auto;
-  //   z-index: 2;
-  //   text-align: left;
-  // }
   position: relative;
   .autocomplete-input {
     border: 1px solid #c4c4c4;
-    border-radius: 24px;
+    border-radius: 4px 4px 0px 0px;
     width: 300px;
     height: 41px;
     padding: 12px 12px 12px 48px;
@@ -40,11 +29,11 @@
   }
   [data-position="below"] .autocomplete-input[aria-expanded="true"] {
     border-bottom-color: transparent;
-    border-radius: 24px 24px 0 0;
+    border-radius: 0px 0px 0px 0px;
   }
   [data-position="above"] .autocomplete-input[aria-expanded="true"] {
     border-top-color: transparent;
-    border-radius: 0 0 24px 24px;
+    border-radius: 0 0 4px 4px;
     z-index: 9 !important;
   }
   .autocomplete[data-loading="true"]:after {
@@ -62,8 +51,8 @@
   }
   .autocomplete-result-list {
     position: absolute;
-    top: 21px;
-    padding-top: 21px;
+    //  top: 21px;
+    //  padding-top: 21px;
     border: 1px solid rgba(0, 0, 0, 0.12);
     padding: 0;
     box-sizing: border-box;
@@ -96,7 +85,7 @@
     background-repeat: no-repeat;
     background-position: 12px;
     &:first-child {
-      margin-top: 21px;
+      //  margin-top: 21px;
     }
   }
   .autocomplete-result:hover,
